@@ -1,2 +1,2 @@
-# titra
-TimeTracker app to learn CoreData (iOS Framework)
+# TiTra
+TimeTracker iOS app to learn CoreData
