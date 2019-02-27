@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9370BA12226BF7300DA9C33 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9370BA02226BF7300DA9C33 /* Task.swift */; };
+		D9370BA32226BF8300DA9C33 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9370BA22226BF8300DA9C33 /* Timer.swift */; };
+		D9370BA52226C28800DA9C33 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9370BA42226C28800DA9C33 /* CoreDataManager.swift */; };
 		D9A36B66222560AE00B183A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A36B65222560AE00B183A5 /* AppDelegate.swift */; };
 		D9A36B6B222560AE00B183A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9A36B69222560AE00B183A5 /* Main.storyboard */; };
 		D9A36B6E222560AE00B183A5 /* titra.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9A36B6C222560AE00B183A5 /* titra.xcdatamodeld */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D9370BA02226BF7300DA9C33 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		D9370BA22226BF8300DA9C33 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		D9370BA42226C28800DA9C33 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D9A36B62222560AD00B183A5 /* titra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = titra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9A36B65222560AE00B183A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9A36B6A222560AE00B183A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,6 +49,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9370B9E2226BF0900DA9C33 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D9A36B6C222560AE00B183A5 /* titra.xcdatamodeld */,
+				D9370BA42226C28800DA9C33 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		D9370B9F2226BF1300DA9C33 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				D9370BA02226BF7300DA9C33 /* Task.swift */,
+				D9370BA22226BF8300DA9C33 /* Timer.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
 		D9A36B59222560AD00B183A5 = {
 			isa = PBXGroup;
 			children = (
@@ -65,7 +89,7 @@
 				D9A36B7C222560D300B183A5 /* Application */,
 				D9A36B7A222560C400B183A5 /* Controllers */,
 				D9A36B7D222560F400B183A5 /* Interface */,
-				D9A36B7B222560CC00B183A5 /* Model */,
+				D9A36B7B222560CC00B183A5 /* Models */,
 			);
 			path = titra;
 			sourceTree = "<group>";
@@ -81,12 +105,13 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		D9A36B7B222560CC00B183A5 /* Model */ = {
+		D9A36B7B222560CC00B183A5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D9A36B6C222560AE00B183A5 /* titra.xcdatamodeld */,
+				D9370B9F2226BF1300DA9C33 /* Objects */,
+				D9370B9E2226BF0900DA9C33 /* CoreData */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D9A36B7C222560D300B183A5 /* Application */ = {
@@ -184,7 +209,10 @@
 				D9FFEA3D22257BBD00A06ABF /* CompletedTasksController.swift in Sources */,
 				D9FFEA3722257B5D00A06ABF /* TasksController.swift in Sources */,
 				D9FFEA3922257B7200A06ABF /* AddTaskController.swift in Sources */,
+				D9370BA12226BF7300DA9C33 /* Task.swift in Sources */,
+				D9370BA52226C28800DA9C33 /* CoreDataManager.swift in Sources */,
 				D9A36B6E222560AE00B183A5 /* titra.xcdatamodeld in Sources */,
+				D9370BA32226BF8300DA9C33 /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

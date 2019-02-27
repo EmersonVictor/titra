@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="TaskMO" representedClassName="TaskMO" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="expectedExecutionTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="time" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TimerMO" inverseName="task" inverseEntity="TimerMO" syncable="YES"/>
+    </entity>
+    <entity name="TimerMO" representedClassName="TimerMO" syncable="YES" codeGenerationType="class">
+        <attribute name="executionTime" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="expiredTime" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TaskMO" inverseName="time" inverseEntity="TaskMO" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TaskMO" positionX="203.48828125" positionY="-154.890625" width="128" height="28"/>
+        <element name="TimerMO" positionX="-41.80859375" positionY="-9.890625" width="128" height="28"/>
+    </elements>
+</model>

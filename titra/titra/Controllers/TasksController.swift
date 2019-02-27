@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TasksController: UIViewController {
 
@@ -14,7 +15,7 @@ class TasksController: UIViewController {
     @IBOutlet weak var tasksTableView: UITableView!
     
     // MARK: - Variables
-    let tasks = ["test"]
+    var tasks: [NSManagedObject] = []
     
     // MARK: - Initializer
     override func viewDidLoad() {
@@ -23,9 +24,14 @@ class TasksController: UIViewController {
         self.tasksTableView.delegate = self
     }
     
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+    override func viewWillAppear(_ animated: Bool) {
+        self.updateTasks()
+    }
+    
+    // MARK: - Update tasks
+    func updateTasks() {
+        self.tasks = CoreDataManager.shared.fetchObjects(forEntity: "TaskMO")
+        self.tasksTableView.reloadData()
     }
 }
 
@@ -41,7 +47,13 @@ extension TasksController: UITableViewDataSource {
             cell = tableView.dequeueReusableCell(withIdentifier: "completedTasks")
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: "task")
+            
+            let task = tasks[indexPath.row - 1]
+            
+            cell?.textLabel?.text = task.value(forKey: "name") as? String
         }
+        
+        cell?.selectionStyle = .none
         
         return cell!
     }
@@ -54,5 +66,9 @@ extension TasksController: UITableViewDelegate {
         } else {
             self.performSegue(withIdentifier: "taskTimer", sender: nil)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 }

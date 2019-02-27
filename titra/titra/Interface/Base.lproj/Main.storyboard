@@ -159,7 +159,7 @@
                     <navigationItem key="navigationItem" title="Add new task" id="Me3-YK-mhd">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="uJD-LM-USN">
                             <connections>
-                                <action selector="saveTaks:" destination="Cr2-OQ-NnT" id="mEv-6G-FMD"/>
+                                <action selector="saveTask:" destination="Cr2-OQ-NnT" id="mEv-6G-FMD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
