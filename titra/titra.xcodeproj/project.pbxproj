@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D9370BA12226BF7300DA9C33 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9370BA02226BF7300DA9C33 /* Task.swift */; };
-		D9370BA32226BF8300DA9C33 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9370BA22226BF8300DA9C33 /* Timer.swift */; };
 		D9370BA52226C28800DA9C33 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9370BA42226C28800DA9C33 /* CoreDataManager.swift */; };
+		D96D82BB22280923009740D7 /* TimerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96D82BA22280923009740D7 /* TimerFormatter.swift */; };
+		D96D82BD22285E28009740D7 /* TaskTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96D82BC22285E28009740D7 /* TaskTimer.swift */; };
 		D9A36B66222560AE00B183A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A36B65222560AE00B183A5 /* AppDelegate.swift */; };
 		D9A36B6B222560AE00B183A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9A36B69222560AE00B183A5 /* Main.storyboard */; };
 		D9A36B6E222560AE00B183A5 /* titra.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9A36B6C222560AE00B183A5 /* titra.xcdatamodeld */; };
@@ -18,13 +19,13 @@
 		D9FFEA3722257B5D00A06ABF /* TasksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FFEA3622257B5D00A06ABF /* TasksController.swift */; };
 		D9FFEA3922257B7200A06ABF /* AddTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FFEA3822257B7200A06ABF /* AddTaskController.swift */; };
 		D9FFEA3B22257BAD00A06ABF /* TaskTimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FFEA3A22257BAD00A06ABF /* TaskTimerController.swift */; };
-		D9FFEA3D22257BBD00A06ABF /* CompletedTasksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FFEA3C22257BBD00A06ABF /* CompletedTasksController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D9370BA02226BF7300DA9C33 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		D9370BA22226BF8300DA9C33 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		D9370BA42226C28800DA9C33 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D96D82BA22280923009740D7 /* TimerFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFormatter.swift; sourceTree = "<group>"; };
+		D96D82BC22285E28009740D7 /* TaskTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTimer.swift; sourceTree = "<group>"; };
 		D9A36B62222560AD00B183A5 /* titra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = titra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9A36B65222560AE00B183A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9A36B6A222560AE00B183A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,7 +36,6 @@
 		D9FFEA3622257B5D00A06ABF /* TasksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksController.swift; sourceTree = "<group>"; };
 		D9FFEA3822257B7200A06ABF /* AddTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskController.swift; sourceTree = "<group>"; };
 		D9FFEA3A22257BAD00A06ABF /* TaskTimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTimerController.swift; sourceTree = "<group>"; };
-		D9FFEA3C22257BBD00A06ABF /* CompletedTasksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTasksController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +62,17 @@
 			isa = PBXGroup;
 			children = (
 				D9370BA02226BF7300DA9C33 /* Task.swift */,
-				D9370BA22226BF8300DA9C33 /* Timer.swift */,
+				D96D82BC22285E28009740D7 /* TaskTimer.swift */,
 			);
 			path = Objects;
+			sourceTree = "<group>";
+		};
+		D96D82B9222808B6009740D7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D96D82BA22280923009740D7 /* TimerFormatter.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D9A36B59222560AD00B183A5 = {
@@ -88,6 +96,7 @@
 			children = (
 				D9A36B7C222560D300B183A5 /* Application */,
 				D9A36B7A222560C400B183A5 /* Controllers */,
+				D96D82B9222808B6009740D7 /* Helpers */,
 				D9A36B7D222560F400B183A5 /* Interface */,
 				D9A36B7B222560CC00B183A5 /* Models */,
 			);
@@ -98,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				D9FFEA3822257B7200A06ABF /* AddTaskController.swift */,
-				D9FFEA3C22257BBD00A06ABF /* CompletedTasksController.swift */,
 				D9FFEA3622257B5D00A06ABF /* TasksController.swift */,
 				D9FFEA3A22257BAD00A06ABF /* TaskTimerController.swift */,
 			);
@@ -165,6 +173,11 @@
 				TargetAttributes = {
 					D9A36B61222560AD00B183A5 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -206,13 +219,13 @@
 			files = (
 				D9A36B66222560AE00B183A5 /* AppDelegate.swift in Sources */,
 				D9FFEA3B22257BAD00A06ABF /* TaskTimerController.swift in Sources */,
-				D9FFEA3D22257BBD00A06ABF /* CompletedTasksController.swift in Sources */,
 				D9FFEA3722257B5D00A06ABF /* TasksController.swift in Sources */,
 				D9FFEA3922257B7200A06ABF /* AddTaskController.swift in Sources */,
+				D96D82BB22280923009740D7 /* TimerFormatter.swift in Sources */,
 				D9370BA12226BF7300DA9C33 /* Task.swift in Sources */,
+				D96D82BD22285E28009740D7 /* TaskTimer.swift in Sources */,
 				D9370BA52226C28800DA9C33 /* CoreDataManager.swift in Sources */,
 				D9A36B6E222560AE00B183A5 /* titra.xcdatamodeld in Sources */,
-				D9370BA32226BF8300DA9C33 /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

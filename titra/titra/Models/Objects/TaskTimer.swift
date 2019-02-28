@@ -9,15 +9,22 @@
 import Foundation
 import CoreData
 
-class Timer {
-    let executionTime: Date
-    let expiredTime: Date
+class TaskTimer {
+    var executionTime: Int32
+    var expiredTime: Int32
     
-    init(executionTime: Date, expiredTime: Date) {
+    // MARK: - Initializers
+    init(executionTime: Int32, expiredTime: Int32) {
         self.executionTime = executionTime
         self.expiredTime = expiredTime
     }
     
+    init(timer: NSManagedObject) {
+        self.executionTime = timer.value(forKey: "executionTime") as! Int32
+        self.expiredTime = timer.value(forKey: "expiredTime") as! Int32
+    }
+
+    // MARK: - Save object
     func save() {
         // Create CoreData manager and get the managed object
         let manager = CoreDataManager.shared

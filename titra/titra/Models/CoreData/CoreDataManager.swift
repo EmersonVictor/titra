@@ -16,36 +16,49 @@ class CoreDataManager {
     
     static let shared = CoreDataManager()
     
+    // MARK: - Initializer
     private init() {
         self.appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
         self.context = self.appDelegate.persistentContainer.viewContext
     }
     
-    func getManagedObject(forEntityName entityName: String) -> NSManagedObject? {
+    // MARK: - Get managed object (with id)
+    func getManagedObject(forEntityName entityName: String, withID objectId: NSManagedObjectID? = nil) -> NSManagedObject? {
         
-        guard let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) else {
-            return nil
+        if let id = objectId {
+            // Get existing managed object
+            return self.context.object(with: id)
+            
+        } else {
+            // Create new managed object
+            guard let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) else {
+                return nil
+            }
+            
+            let object = NSManagedObject(entity: entity, insertInto: self.context)
+            
+            return object
         }
-        
-        let object = NSManagedObject(entity: entity, insertInto: self.context)
-        
-        return object
     }
     
-    func fetchObjects(forEntity entityName: String, withPredicates predicates: [NSPredicate] = []) -> [NSManagedObject] {
-        let fetchRequest =
-            NSFetchRequest<NSManagedObject>(entityName: entityName)
+    // MARK: - Fetch objects (with predicates)
+    func fetchObjects(forEntity entityName: String, withPredicates predicate: NSPredicate? = nil, completion: (_ objects: [NSManagedObject]) -> Void, error:  (_ error: NSError?) -> Void) {
         
-        var objetcs: [NSManagedObject] = []
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
         
-        
-        do {
-            objetcs = try self.context.fetch(fetchRequest)
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
+        // Add predicate
+        if let filter = predicate {
+            fetchRequest.predicate = filter
         }
         
-        return objetcs
+        // Fetch request
+        do {
+            let objetcs = try self.context.fetch(fetchRequest)
+            completion(objetcs)
+            
+        } catch let fetchError as NSError {
+            error(fetchError)
+        }
     }
 }
 

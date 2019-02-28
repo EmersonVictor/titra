@@ -80,21 +80,20 @@
                         <barButtonItem key="backBarButtonItem" title="back" id="LGX-GW-x9d"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="ZtU-Te-RFZ">
                             <connections>
-                                <segue destination="Cr2-OQ-NnT" kind="show" id="0hl-Qf-gUy"/>
+                                <segue destination="Cr2-OQ-NnT" kind="show" identifier="createUpdateTask" id="0hl-Qf-gUy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tasksTableView" destination="Bnk-VO-7sU" id="Jwe-m6-7vi"/>
                         <segue destination="ns4-SJ-Ub6" kind="show" identifier="taskTimer" id="TQb-yx-Ig9"/>
-                        <segue destination="5lW-uJ-p2c" kind="show" identifier="completedTasks" id="ssZ-Pe-i3k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="965.21739130434787" y="790.84821428571422"/>
         </scene>
-        <!--Add new task-->
+        <!--Task-->
         <scene sceneID="p1T-hH-xha">
             <objects>
                 <viewController id="Cr2-OQ-NnT" customClass="AddTaskController" customModule="titra" customModuleProvider="target" sceneMemberID="viewController">
@@ -156,7 +155,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YRk-hT-KEr"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add new task" id="Me3-YK-mhd">
+                    <navigationItem key="navigationItem" title="Task" id="Me3-YK-mhd">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="uJD-LM-USN">
                             <connections>
                                 <action selector="saveTask:" destination="Cr2-OQ-NnT" id="mEv-6G-FMD"/>
@@ -170,64 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UpP-36-8iE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1807" y="791"/>
-        </scene>
-        <!--Completed tasks-->
-        <scene sceneID="sR2-ri-XeZ">
-            <objects>
-                <viewController id="5lW-uJ-p2c" customClass="CompletedTasksController" customModule="titra" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="p0I-Xq-ocg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yLv-t0-3hE">
-                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="task" textLabel="jWh-sK-oiA" detailTextLabel="Ku4-Rw-p95" rowHeight="66" style="IBUITableViewCellStyleValue1" id="TRd-Wz-Pcv">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="66"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TRd-Wz-Pcv" id="h52-i7-EtB">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="65.666666666666671"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Study for DB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jWh-sK-oiA">
-                                                    <rect key="frame" x="20.000000000000007" y="23" width="97.666666666666671" height="20.333333333333332"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="00:30:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ku4-Rw-p95">
-                                                    <rect key="frame" x="322.66666666666669" y="23" width="71.333333333333329" height="20.333333333333332"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="yLv-t0-3hE" firstAttribute="trailing" secondItem="AWU-1p-g5G" secondAttribute="trailing" id="Czb-lC-rST"/>
-                            <constraint firstAttribute="bottom" secondItem="yLv-t0-3hE" secondAttribute="bottom" id="Umn-zG-jT5"/>
-                            <constraint firstItem="yLv-t0-3hE" firstAttribute="leading" secondItem="AWU-1p-g5G" secondAttribute="leading" id="ooq-9C-Pnh"/>
-                            <constraint firstItem="yLv-t0-3hE" firstAttribute="top" secondItem="AWU-1p-g5G" secondAttribute="top" id="zKy-RW-35x"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="AWU-1p-g5G"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Completed tasks" id="Lf0-NO-Nq4"/>
-                    <connections>
-                        <outlet property="completedTasksTableView" destination="yLv-t0-3hE" id="G6p-2p-Yjf"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ym-Fh-0oH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1473.913043478261" y="1522.7678571428571"/>
+            <point key="canvasLocation" x="1828" y="459"/>
         </scene>
         <!--Task timer-->
         <scene sceneID="4lb-63-QgD">
@@ -355,7 +297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebE-ZP-6zL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="518.84057971014499" y="1522.7678571428571"/>
+            <point key="canvasLocation" x="1828" y="1156"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hr8-tT-Tvq">
